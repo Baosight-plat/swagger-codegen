@@ -63,6 +63,10 @@ public abstract class AbstractGenerator {
     /**
      * Get the template file path with template dir prepended, and use the
      * library template if exists.
+     * @param config
+     * @param templateFile
+     * @return string
+     * 
      */
     public String getFullTemplateFile(CodegenConfig config, String templateFile) {
         String library = config.getLibrary();

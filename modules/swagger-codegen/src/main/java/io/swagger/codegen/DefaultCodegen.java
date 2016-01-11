@@ -322,7 +322,7 @@ public class DefaultCodegen {
      * Return the parameter name by removing invalid characters and proper escaping if
      * it's a reserved word.
      * 
-     * @param property Codegen property object
+     * @param name Codegen property object
      * @return the sanitized parameter name
      */
     public String toParamName(String name) {
@@ -347,7 +347,7 @@ public class DefaultCodegen {
      * Return the escaped name of the reserved word
      * 
      * @param name the name to be escaped
-     * @throws Runtime exception as reserved word is not allowed (default behavior)
+     * @throws RuntimeException as reserved word is not allowed (default behavior)
      * @return the escaped reserved word
      */
     public String escapeReservedWord(String name) {
@@ -384,9 +384,9 @@ public class DefaultCodegen {
      * between Swagger type and the corresponding import statement for the language. This will 
      * also add some language specified CLI options, if any.
      *
-     * @param path the path of the operation
-     * @param operation Swagger operation object
-     * @return string presentation of the example path
+//     * @param path the path of the operation
+//     * @param operation Swagger operation object
+//     * @return string presentation of the example path
      */
     public DefaultCodegen() {
         defaultIncludes = new HashSet<String>(
@@ -1433,7 +1433,7 @@ public class DefaultCodegen {
      * Convert Swagger Parameter object to Codegen Parameter object
      *
      * @param param Swagger parameter object
-     * @param a set of imports for library/package/module
+     * @param imports a set of imports for library/package/module
      * @return Codegen Parameter object
      */
     public CodegenParameter fromParameter(Parameter param, Set<String> imports) {
@@ -2009,6 +2009,7 @@ public class DefaultCodegen {
     /**
      * All library templates supported.
      * (key: library name, value: library description)
+     * @return 
      */
     public Map<String, String> supportedLibraries() {
         return supportedLibraries;
@@ -2022,6 +2023,7 @@ public class DefaultCodegen {
 
     /**
      * Library template (sub-template).
+     * @return sub-template
      */
     public String getLibrary() {
         return library;

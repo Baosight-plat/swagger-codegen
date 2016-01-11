@@ -534,13 +534,28 @@
         </dependencies>
     </dependencyManagement>
     <repositories>
-        <repository>
+<!--         <repository>
             <id>sonatype-snapshots</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
+        </repository> -->
+        <repository>
+            <id>snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://10.25.103.128:8081/nexus/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
         </repository>
+        <distributionManagement>
+            <snapshotRepository>
+                <id>snapshots</id>
+                <url>http://10.25.103.128:8081/nexus/content/repositories/snapshots</url>
+            </snapshotRepository>
+        </distributionManagement>
     </repositories>
     <properties>
         <swagger-parser-version>1.0.12</swagger-parser-version>

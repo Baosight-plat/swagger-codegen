@@ -123,6 +123,7 @@ public interface CodegenConfig {
 
     /**
      * Library template (sub-template).
+     * @return sub-template name
      */
     String getLibrary();
 }
